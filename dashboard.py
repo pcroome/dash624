@@ -9,7 +9,9 @@ app.layout = html.Div(
     [
         html.H1("Layout Prototype"),
         """
-        This is ***REALLY*** smart text now
+        This is ***REALLY*** smart text now...
+
+        And this is an update. 
         """,
     ]
 )
