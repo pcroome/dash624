@@ -228,9 +228,7 @@ app.layout = html.Div(
     [
         html.H1("Lecture 3 -- Exploring Sepsis Data"),
         """
-        Let's explore the sepsis data!
-        Not the best styling so hopefully you can improve it.
-        The code shows some parameters you can manipulate, but there are lots more to try!
+        Welcome to Paul, Josh, and Jason's exploration of the sepsis data! Figure one was completed by Paul; figure 2 by Jason; and figure 3 by Josh. 
         """,
         dcc.Graph(
             figure=fig1a,
@@ -243,17 +241,20 @@ app.layout = html.Div(
         dcc.Graph(
             figure=vio,
             style={
-                "width": "90%",
-                "height": "100vh",
+                "width": "80%",
+                "height": "80vh",
             },
         ),
         dcc.Graph(
             figure=fig3,
             style={
-                "width": "100vh",
-                "height": "100vh",
+                "width": "80%",
+                "height": "80vh",
             },
         ),
+        """
+        We do not appreciate python anywhere, any way, or at any time. 
+        """
     ]
 )
 
