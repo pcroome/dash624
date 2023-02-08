@@ -85,12 +85,15 @@ sdf_icu2 = sdf_con1[['patient','Age', 'ICULOS','SepsisLabel','UnitLabel', 'Sex']
 ### Figure 1 - Paul
 
 # Density plots -- new version
+
 fig1a = go.Figure()
+
+# Add histogram for sepsis negative patients
 fig1a.add_trace(go.Histogram(
         x=sdf_icu2.ICULOS[sdf_icu2['SepsisLabel'] == 0], 
         histnorm='probability density',
         name='Sep(-)',
-        xbins=dict( # bins used for histogram
+        xbins=dict(
             start=0.0,
             end=350.0,
             size=5
@@ -99,11 +102,12 @@ fig1a.add_trace(go.Histogram(
     
 )
 
+# Add histogram for sepsis positive patients
 fig1a.add_trace(go.Histogram(
         x=sdf_icu2.ICULOS[sdf_icu2['SepsisLabel'] == 1], 
         histnorm='probability density',
         name='Sep(+)',
-        xbins=dict( # bins used for histogram
+        xbins=dict(
             start=0.0,
             end=350.0,
             size=5
@@ -111,12 +115,12 @@ fig1a.add_trace(go.Histogram(
     )
 )
 
-# Overlay both histograms
+# Overlay histograms and update title/axes
 fig1a.update_layout(
     barmode='overlay',
     title_text="Density Plot of Length of Stay Based on Sepsis Status",
-    xaxis_title_text='ICU Length of Stay (hours)', # xaxis label
-    yaxis_title_text='Probability Density', # yaxis label
+    xaxis_title_text='ICU Length of Stay (hours)',
+    yaxis_title_text='Probability Density',
 )
 
 fig1a.update_traces(opacity=0.75)
@@ -209,14 +213,6 @@ fig3.update_layout(
 
 fig3.update_traces(width=1)
 fig3.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
-
-
-
-# ANOTHER TRY FOR PAUL
-fig1a = matplotlib.pyplot.hist(sdf_icu2['ICULOS'], density=True)
-
-fig1a.show()
-
 
 
 # # Create our first figure
