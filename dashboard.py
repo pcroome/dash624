@@ -215,18 +215,14 @@ fig3.update_traces(width=1)
 fig3.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
 
 
-# # Create our first figure
-# fig = px.box(df, x="WBC", color="SepsisLabel")
 
-# # Style the figure
-# fig.update_layout(
-#     title="White Blood Count and Sepsis",
-#     font_size=22,
-# )
 
+## ACTUAL PAGE CONTENT
+
+# Textual and graphic items
 app.layout = html.Div(
     [
-        html.H1("Lecture 3 -- Exploring Sepsis Data"),
+        html.H1("Assignment 2 -- Exploring Sepsis Data"),
         """
         Welcome to Paul, Josh, and Jason's exploration of the sepsis data! Figure one was completed by Paul; figure 2 by Jason; and figure 3 by Josh. 
         """,
