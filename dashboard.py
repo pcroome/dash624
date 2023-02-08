@@ -249,7 +249,7 @@ app.layout = html.Div(
                style={
                    'margin': '10px', 
                    'width': '80%', 
-                   'text-align': 'center'})
+                   'text-align': 'center'}),
         dcc.Graph(
             figure=vio,
             style={
@@ -261,7 +261,7 @@ app.layout = html.Div(
                style={
                    'margin': '10px', 
                    'width': '80%', 
-                   'text-align': 'center'})
+                   'text-align': 'center'}),
         dcc.Graph(
             figure=fig3,
             style={
