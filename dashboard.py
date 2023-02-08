@@ -6,7 +6,11 @@
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 import numpy as np
+
+
 # import scipy
+import matplotlib
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -200,6 +204,10 @@ fig3.update_traces(textfont_size=12, textangle=0, textposition="outside", clipon
 
 
 
+# ANOTHER TRY FOR PAUL
+fig1a = matplotlib.pyplot.hist(sdf_icu2['ICULOS'], density=True)
+
+fig1a.show()
 
 
 
