@@ -7,7 +7,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
-import seaborn as sns
+# import seaborn as sns
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
