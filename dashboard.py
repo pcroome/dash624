@@ -86,27 +86,27 @@ sdf_icu2 = sdf_con1[['patient','Age', 'ICULOS','SepsisLabel','UnitLabel', 'Sex']
 ### Figure 1 - Paul
 
 # Density plots 
-# fig1 = ff.create_distplot(
-#     [
-#         (sdf_icu2['ICULOS']
-#          .loc[sdf_icu2['SepsisLabel']==0]
-#          .dropna()
-#          .to_list()
-#         ),
-#         (sdf_icu2['ICULOS']
-#          .loc[sdf_icu2['SepsisLabel']==1]
-#          .dropna()
-#          .to_list()
-#         ),
-#     ],
-#     group_labels=['Negative','Positive'],
-#     show_rug=False,
-#     show_hist=True,
-# )
+fig1 = ff.create_distplot(
+    [
+        (sdf_icu2['ICULOS']
+         .loc[sdf_icu2['SepsisLabel']==0]
+         .dropna()
+         .to_list()
+        ),
+        (sdf_icu2['ICULOS']
+         .loc[sdf_icu2['SepsisLabel']==1]
+         .dropna()
+         .to_list()
+        ),
+    ],
+    group_labels=['Negative','Positive'],
+    show_rug=False,
+    show_hist=True,
+)
 
-# fig1.update_layout(title="Density Plot of Length of Stay Based on Sepsis Status")
-# fig1.update_xaxes(title_text='ICU Length of Stay (hours)')
-# fig1.update_yaxes(title_text='Density (kde)')
+fig1.update_layout(title="Density Plot of Length of Stay Based on Sepsis Status")
+fig1.update_xaxes(title_text='ICU Length of Stay (hours)')
+fig1.update_yaxes(title_text='Density (kde)')
 
 
 
@@ -246,7 +246,7 @@ app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=True)
     
     
     
