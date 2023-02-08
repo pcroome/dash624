@@ -27,7 +27,8 @@ def load_data(url):
     return df
 
 # Loading data
-url = "https://drive.google.com/file/d/1rRqepqYvh3IYSeAtetDOlVmIGPnMvw0v/view"
+# url = "https://drive.google.com/file/d/1rRqepqYvh3IYSeAtetDOlVmIGPnMvw0v/view"
+url = ""
 sdf = load_data(url)
 
 # Including only variables of interest
