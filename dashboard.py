@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+!pip install scipy
+
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 import numpy as np
