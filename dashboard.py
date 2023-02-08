@@ -89,29 +89,42 @@ sdf_icu2 = sdf_con1[['patient','Age', 'ICULOS','SepsisLabel','UnitLabel', 'Sex']
 
 ### Figure 1 - Paul
 
-# Density plots 
-fig1 = ff.create_distplot(
-    [
-        (sdf_icu2['ICULOS']
-         .loc[sdf_icu2['SepsisLabel']==0]
-         .dropna()
-         .to_list()
-        ),
-        (sdf_icu2['ICULOS']
-         .loc[sdf_icu2['SepsisLabel']==1]
-         .dropna()
-         .to_list()
-        ),
-    ],
-    group_labels=['Negative','Positive'],
-    show_rug=False,
-    show_hist=True,
+# Density plots -- new version
+fig1a = go.Figure()
+fig1a.add_trace(go.Histogram(
+        x=sdf_icu2.ICULOS[sdf_icu2['SepsisLabel'] == 0], 
+        histnorm='probability density',
+        name='Sep(-)',
+        xbins=dict( # bins used for histogram
+            start=0.0,
+            end=350.0,
+            size=5
+        )
+    )
+    
 )
 
-fig1.update_layout(title="Density Plot of Length of Stay Based on Sepsis Status")
-fig1.update_xaxes(title_text='ICU Length of Stay (hours)')
-fig1.update_yaxes(title_text='Density (kde)')
+fig1a.add_trace(go.Histogram(
+        x=sdf_icu2.ICULOS[sdf_icu2['SepsisLabel'] == 1], 
+        histnorm='probability density',
+        name='Sep(+)',
+        xbins=dict( # bins used for histogram
+            start=0.0,
+            end=350.0,
+            size=5
+        )
+    )
+)
 
+# Overlay both histograms
+fig1a.update_layout(
+    barmode='overlay',
+    title_text="Density Plot of Length of Stay Based on Sepsis Status",
+    xaxis_title_text='ICU Length of Stay (hours)', # xaxis label
+    yaxis_title_text='Probability Density', # yaxis label
+)
+
+fig1a.update_traces(opacity=0.75)
 
 
 
@@ -229,7 +242,7 @@ app.layout = html.Div(
         The code shows some parameters you can manipulate, but there are lots more to try!
         """,
         dcc.Graph(
-            figure=fig1,
+            figure=fig1a,
             style={
                 "width": "80%",
                 "height": "80vh",
