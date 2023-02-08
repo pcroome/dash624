@@ -27,7 +27,6 @@ def load_data(url):
     return df
 
 # Loading data
-# url = "https://drive.google.com/file/d/1rRqepqYvh3IYSeAtetDOlVmIGPnMvw0v/view"
 url = ""
 sdf = load_data(url)
 
@@ -224,9 +223,7 @@ fig3.update_traces(textfont_size=12, textangle=0, textposition="outside", clipon
 app.layout = html.Div(
     [
         html.H1("Assignment 2 -- Exploring Sepsis Data"),
-        """
-        Welcome to Paul, Josh, and Jason's exploration of the sepsis data! Figure one was completed by Paul; figure 2 by Jason; and figure 3 by Josh. 
-        """,
+        html.P("Welcome to Paul, Josh, and Jason's exploration of the sepsis data! Figure one was completed by Paul; figure 2 by Jason; and figure 3 by Josh."),
         dcc.Graph(
             figure=fig1a,
             style={
