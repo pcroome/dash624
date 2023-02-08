@@ -243,7 +243,7 @@ app.layout = html.Div(
                 "width": "80%",
                 "height": "80vh",
             },
-            id="OurFirstFigure",
+            id="OurFirstFigure"
         ),
         html.H2("Figure 2", 
                style={
