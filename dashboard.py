@@ -222,8 +222,21 @@ fig3.update_traces(textfont_size=12, textangle=0, textposition="outside", clipon
 # Textual and graphic items
 app.layout = html.Div(
     [
-        html.H1("Assignment 2 -- Exploring Sepsis Data"),
-        html.P("Welcome to Paul, Josh, and Jason's exploration of the sepsis data! Figure one was completed by Paul; figure 2 by Jason; and figure 3 by Josh."),
+        html.H1("Assignment 2 -- Exploring Sepsis Data", 
+               style={
+                   'margin': '10px', 
+                   'width': '80%', 
+                   'text-align': 'center'}),
+        html.P("Welcome to Paul, Josh, and Jason's exploration of the sepsis data! Figure one was completed by Paul; figure 2 by Jason; and figure 3 by Josh.", 
+               style={
+                   'margin': '10px', 
+                   'width': '80%', 
+                   'text-align': 'center'}),
+        html.H2("Figure 1", 
+               style={
+                   'margin': '10px', 
+                   'width': '80%', 
+                   'text-align': 'center'}),
         dcc.Graph(
             figure=fig1a,
             style={
@@ -232,6 +245,11 @@ app.layout = html.Div(
             },
             id="OurFirstFigure",
         ),
+        html.H2("Figure 2", 
+               style={
+                   'margin': '10px', 
+                   'width': '80%', 
+                   'text-align': 'center'})
         dcc.Graph(
             figure=vio,
             style={
@@ -239,6 +257,11 @@ app.layout = html.Div(
                 "height": "80vh",
             },
         ),
+        html.H2("Figure 3", 
+               style={
+                   'margin': '10px', 
+                   'width': '80%', 
+                   'text-align': 'center'})
         dcc.Graph(
             figure=fig3,
             style={
@@ -246,9 +269,12 @@ app.layout = html.Div(
                 "height": "80vh",
             },
         ),
-        """
-        We do not appreciate python anywhere, any way, or at any time. 
-        """
+        html.P("We do not appreciate python anywhere, any way, or at any time.",
+              style={
+                   'margin': '10px', 
+                   'width': '80%', 
+                   'text-align': 'center', 
+                   'color': 'grey'})
     ]
 )
 
