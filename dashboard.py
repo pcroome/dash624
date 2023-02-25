@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# pip3 install scipy
-# sudo apt-get install python3-scipy
-
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 
